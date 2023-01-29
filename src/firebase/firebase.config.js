@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_apiKey,
-  authDomain: process.env.REACT_APP_authDomain,
-  projectId: process.env.REACT_APP_projectId,
-  storageBucket: process.env.REACT_APP_storageBucket,
-  messagingSenderId: process.env.REACT_APP_messagingSenderId,
-  appId: process.env.REACT_APP_appId,
+    apiKey: "AIzaSyBehF1D5I8wo2igicYDOv59KornQffoulw",
+    authDomain: "jobbox-redux-7b0cd.firebaseapp.com",
+    projectId: "jobbox-redux-7b0cd",
+    storageBucket: "jobbox-redux-7b0cd.appspot.com",
+    messagingSenderId: "563220117639",
+    appId: "1:563220117639:web:43c74de327302e3539a022"
 };
 
 // Initialize Firebase
