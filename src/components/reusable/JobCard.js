@@ -9,7 +9,7 @@ const JobCard = ({ item }) => {
   return (
     <div
       key={_id}
-      className='border border-gray-300 shadow-xl p-5 rounded-2xl text-primary'
+      className='border border-gray-300 shadow-xl p-5 rounded-2xl text-primary  mt-3 m-3'
     >
       <div className='flex justify-between  text-primary'>
         <div>

@@ -51,7 +51,7 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     logout: (state) => {
-      state.user.email = "";
+      state.user = { email: "",role:"" };
     },
     setUser: (state, payload) => {
       state.user.email = payload;
@@ -121,7 +121,7 @@ const authSlice = createSlice({
       })
       .addCase(getUser.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        
+
         if (payload.status) {
           state.user = payload.data;
         } else {
