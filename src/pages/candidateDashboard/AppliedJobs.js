@@ -17,9 +17,12 @@ const AppliedJobs = () => {
 
   return (
     <div>
-      {data.data.map((item) => (
-        <JobCard item={item} key={item._id} />
-      ))}
+      <h1 className=" my-5 text-lg font-semibold text-primary">Applied Jobs</h1>
+      <div className=" grid grid-cols-2">
+        {data.data.map((item) => (
+          <JobCard item={item} key={item._id} />
+        ))}
+      </div>
     </div>
   );
 };
