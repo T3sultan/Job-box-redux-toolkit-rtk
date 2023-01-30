@@ -3,14 +3,20 @@ import { useForm, useWatch } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { FaChevronLeft } from "react-icons/fa";
 import { useRegisterMutation } from "../../features/auth/authApi";
+import { useSelector } from "react-redux";
 
 const EmployerRegistration = () => {
-  // const [countries, setCountries] = useState([]);
+  const {
+    user: { email },
+  } = useSelector((state) => state.auth);
 
-  const { handleSubmit, register, control } = useForm();
+  const { handleSubmit, register, control } = useForm({
+    defaultValues: { email },
+  });
+
   const term = useWatch({ control, name: "term" });
   const navigate = useNavigate();
-  const [postUser, { isLoading ,isError,isSuccess}] = useRegisterMutation();
+  const [postUser, { isLoading, isError, isSuccess }] = useRegisterMutation();
 
   const businessCategory = [
     "Automotive",
@@ -35,11 +41,7 @@ const EmployerRegistration = () => {
 
   const employeeRange = ["1 - 10", "11 - 50", "51 - 100", "Above 100"];
 
-  // useEffect(() => {
-  //   fetch("https://restcountries.com/v3.1/all")
-  //     .then((res) => res.json())
-  //     .then((data) => setCountries(data));
-  // }, []);
+
 
   const onSubmit = (data) => {
     // console.log(data);
@@ -77,7 +79,7 @@ const EmployerRegistration = () => {
             <label className="mb-2" htmlFor="email">
               Email
             </label>
-            <input type="email" id="email"  {...register("email")} />
+            <input disabled className=" cursor-not-allowed " type="email" id="email" {...register("email")} />
           </div>
           <div className="flex flex-col w-full max-w-xs">
             <h1 className="mb-3">Gender</h1>

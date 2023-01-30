@@ -1,10 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const JobCard = ({ jobData }) => {
+const JobCard = ({ item }) => {
   const navigate = useNavigate();
   const { _id, position, companyName, location, employmentType } =
-    jobData || {};
+    item || {};
 
   return (
     <div
